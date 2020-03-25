@@ -1,0 +1,12 @@
+{
+  "name": "edtr",
+  "version": "1.0.0",
+  "description": "A text editor made using nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "oops-creator",
+  "license": "ISC",
+  "dependencies": {}
+}
