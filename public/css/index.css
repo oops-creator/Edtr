@@ -2,4 +2,16 @@
     height: 100%;
   }
 
+
+  .nav-button{
+
+    border: none;
+    background: none;
+
+  }
+
+
+  .iframe{
+  display: none;
+}
   

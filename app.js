@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
+const bodyParser  =require('body-parser')
+const fs = require('fs')
 
 //---------------------------------------------------
 
@@ -15,6 +17,8 @@ hbs.registerPartials(partialPath)
 app.set('view engine' ,'hbs')
 app.set('views' , viewsPath)
 app.use(express.static(pubDir))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 //---------------------------------------------------
 
@@ -22,7 +26,20 @@ app.get("" , (req , res)=>{
     res.render('index')
 })
 
+app.post("" , (req , res)=>{
+    if(typeof req.body.save != undefined){
+        fs.writeFileSync('file.txt' , req.body.text)
+        filedata = req.body.text
+        res.render('index'  , {filedata})
+    }else{
+   
+    }
+    
+    
+})
 
-app.listen(2000 , ()=>{
+
+
+app.listen(8010 , ()=>{
     console.log("the port is working")
 })
