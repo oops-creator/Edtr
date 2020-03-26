@@ -8,5 +8,9 @@
   },
   "author": "oops-creator",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.0",
+    "nodemon": "^2.0.2"
+  }
 }
