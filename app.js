@@ -27,12 +27,15 @@ app.get("" , (req , res)=>{
 })
 
 app.post("" , (req , res)=>{
-    if(typeof req.body.save != undefined){
-        fs.writeFileSync('file.txt' , req.body.text)
+    if(req.body.save != undefined){
         filedata = req.body.text
-        res.render('index'  , {filedata})
+        filename = req.body.save
+        fs.writeFileSync(filename , req.body.text)
+        
+        res.render('index'  , {filename , filedata})
     }else{
-   
+        const newfile = req.body.new
+        res.render('index',{filename:newfile} )
     }
     
     

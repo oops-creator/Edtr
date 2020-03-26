@@ -2,7 +2,11 @@
     <title>{{filename}}</title>
 </head>
 <body>
-  <form action="" method="post" name="edtr">
+
+
+
+
+  <form action="" method="post" name="edtr" >
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Edtr</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,10 +16,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <button class="nav-link nav-button" type="submit" name='new'>New</button>
+                <button class="nav-link nav-button" onclick="getNewFile()" name='new' type="submit" value="" id="newfile">New</button>
             </li>
             <li class="nav-item">
-              <button class="nav-link nav-button" type="submit" name="save">Save</button>
+              <button class="nav-link nav-button" onclick="saveFile()" type="submit" name="save" value="">Save</button>
             </li>
             <!--<li class="nav-item">
                   <button class="nav-link  nav-button" type="submit" name="saveas">Save as</button>
@@ -26,10 +30,20 @@
 
         <textarea  name="text" rows='500' class="form-control full-height" aria-label="With textarea">{{filedata}}</textarea>
     </form>
-    <form action="" method="post" name="dsafads">
-      <input type="text" name="dfds">
-      <button type="submit" name="fefe">hello</button>
-    </form>
+ 
+
+  <script>
+    function getNewFile(){
+    var newfilename = window.prompt("Enter the filename");
+    document.edtr.new.value = newfilename
+
+    }
+
+    function saveFile(){
+      var savename = "{{filename}}"
+      document.edtr.save.value = savename
+    }
+  </script>
   
 </body>
 </html>
